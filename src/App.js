@@ -15,6 +15,12 @@ function App() {
     setFavourites([]);
   };
 
+  // const edit = (event) => {
+  //   const name = parseInt(event.target.name);
+  //   const editMovie = favourites.map(() => movies.name);
+  //   setFavourites([...favourites, editMovie]);
+  // };
+
   const addToFavourites = (event) => {
     const id = parseInt(event.target.id);
     const foundMovie = movies.find((movie) => movie.id === id);
@@ -23,8 +29,9 @@ function App() {
   const removeMovie = (event) => {
     const id = parseInt(event.target.id);
     const newFavouriteList = favourites.filter(
-      (favourites) => favourites.id !== favourites.id
+      (favourites) => favourites.id !== id
     );
+    // console.log(id);
     setFavourites([...newFavouriteList]);
   };
 

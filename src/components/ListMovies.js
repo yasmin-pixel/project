@@ -7,10 +7,15 @@ function ListMovies({
   handleAddToFav,
   isFavourite,
   handleFavouritesClick,
+  handleEditChange,
 }) {
   const [isWatched, setWatched] = useState(watched);
   const watchMovie = () => {
     setWatched(true);
+  };
+  const [isEdit, setEdit] = useState(name);
+  const handleChange = () => {
+    setEdit(name);
   };
 
   return (
@@ -38,6 +43,17 @@ function ListMovies({
           {isWatched ? "Watched" : "watch"}
         </button>
       )}
+
+      <input
+        type="text"
+        placeholder="Edit your movie here"
+        name="search"
+        onChange={handleChange}
+      ></input>
+
+      <button name={name} onClick={handleChange}>
+        edit Movie
+      </button>
     </div>
   );
 }
