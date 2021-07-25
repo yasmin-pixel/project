@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: rgb(113, 112, 112);
   color: white;
   padding: 40px;
   font-family: Arial;
@@ -13,8 +13,8 @@ body {
   align-items: center;
 }
 .image {
-  width: 1000px;
-  height: 600px;
+  width: 600px;
+  height: 500px;
   border-radius: 10px;
 }
 .right-arrow {
@@ -26,6 +26,7 @@ body {
   z-index: 10;
   cursor: pointer;
   user-select: none;
+  flex-wrap: wrap;
 }
 .left-arrow {
   position: absolute;
@@ -46,4 +47,11 @@ body {
   z-index: 10;
   cursor: pointer;
   user-select: none;
+  flex-wrap: wrap;
+}
+.navbar-dark bg-dark {
+  padding: 50px;
+  margin-top: 50px;
+  width: 2000px;
+  height: 500;
 }
