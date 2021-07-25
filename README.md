@@ -18,11 +18,34 @@ Once I knew what I wanted on my web brower. I started to think about diffrent co
 
 Then using the URL provided I retrieved the data from the API.
 
-> const getMovies = async () => {
-
-    const response = await axios.get("https://hub.dummyapis.com/vj/wzGUkpZ");
-    // console.log(response.data);
-    setMovies(response.data);
+<const getMovies = async () => {
+const response = await axios.get("https://hub.dummyapis.com/vj/wzGUkpZ");
+// console.log(response.data);
+setMovies(response.data);>
 
 };
-I had to install axios in order to get the information I needed for my web broswer. Once I had the information i had to render the name, id ,realsed on and if it has been watched or not.
+I had to install axios in order to get the information I needed for my web broswer. Once I had the information I had to render the name, id ,realsed on and if it has been watched or not.
+<const [movies, setMovies] = useState([]);>
+<const [favourites, setFavourites] = useState([]);>
+I created states which holds the information of the movies.
+Then started to use these states and setStates to make diffrent functions.
+First function was to add on a item.
+<const addToFavourites = (event) => {
+const id = parseInt(event.target.id);
+const foundMovie = movies.find((movie) => movie.id === id);
+setFavourites([...favourites, foundMovie]);
+};>
+
+Then used a condition for which bascally state when an onClick happens and the item is true add it on to the favourite list if nothing happens. I used a bang to swap the condition.
+{!isFavourite && (
+<button id={id} className="btn btn-dark" onClick={handleAddToFav}>
+Add to favorite
+</button>
+)}
+{isFavourite && (
+<button
+          id={id}
+          className="btn btn-dark"
+          onClick={handleFavouritesClick}
+        >
+I followed the same format for the rest of the conponents.
