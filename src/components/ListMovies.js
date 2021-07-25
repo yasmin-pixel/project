@@ -13,7 +13,8 @@ function ListMovies({
   const watchMovie = () => {
     setWatched(true);
   };
-  const [isEdit, setEdit] = useState(name);
+  const [edit, setEdit] = useState(name);
+
   const handleChange = () => {
     setEdit(name);
   };
@@ -24,13 +25,18 @@ function ListMovies({
       <li>{id}</li>
       <li>{releasedOn}</li>
       <li>{watched}</li>
+
       {!isFavourite && (
-        <button id={id} onClick={handleAddToFav}>
+        <button id={id} className="btn btn-dark" onClick={handleAddToFav}>
           Add to favorite
         </button>
       )}
       {isFavourite && (
-        <button id={id} onClick={handleFavouritesClick}>
+        <button
+          id={id}
+          className="btn btn-dark"
+          onClick={handleFavouritesClick}
+        >
           Remove From Favourites
         </button>
       )}
@@ -45,14 +51,20 @@ function ListMovies({
       )}
 
       <input
+        value={name}
         type="text"
         placeholder="Edit your movie here"
         name="search"
         onChange={handleChange}
       ></input>
 
-      <button name={name} onClick={handleChange}>
-        edit Movie
+      <button
+        name={name}
+        className="edit btn-dark"
+        onClick={handleChange}
+        value={name}
+      >
+        Edit Movie
       </button>
     </div>
   );
